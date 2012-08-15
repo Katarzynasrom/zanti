@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<RelativeLayout android:background="@drawable/selected_item"
+		android:id="@+id/infobar" android:layout_width="fill_parent"
+		android:layout_height="50dp">
+		<RelativeLayout android:layout_height="wrap_content"
+			android:id="@+id/infobar1" android:layout_width="fill_parent"
+			android:padding="2dp">
+			<ImageView android:id="@+id/icon" android:src="@drawable/icon"
+				android:layout_marginLeft="6dp" android:padding="0px"
+				android:layout_height="wrap_content" android:layout_centerVertical="true"
+				android:layout_marginRight="5dp" android:layout_width="wrap_content" />
+			<TextView android:id="@+id/title" android:layout_toRightOf="@+id/icon"
+				android:layout_width="wrap_content" android:layout_centerVertical="true"
+				android:layout_height="wrap_content" android:text="Anti"
+				android:layout_marginRight="30dp" style="@style/BigHeader" />
+			<ImageView android:layout_alignParentRight="true"
+				android:id="@+id/menu" android:paddingRight="4dp"
+				android:paddingLeft="4dp" android:src="@drawable/menu"
+				android:layout_height="fill_parent" android:layout_width="wrap_content" />
+
+		</RelativeLayout>
+	</RelativeLayout>
+	<include layout="@layout/anti_main_header" />
+
+	<RelativeLayout android:background="@drawable/semi_transparent_background"
+		android:gravity="left" android:orientation="horizontal"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:layout_marginTop="2dp" android:padding="10px"
+		android:id="@+id/crack_type_holder">
+		<TextView android:gravity="left" android:paddingTop="4dp"
+			android:layout_height="wrap_content" android:layout_width="fill_parent"
+			android:id="@+id/mitm_attack_type_label" style="@style/BigHeader"
+			android:textColor="#63a6d9" android:text="Cracking method" />
+		<TextView android:gravity="left|bottom" android:textColor="#FFFFFFFF"
+			android:textSize="12dp" android:layout_below="@+id/mitm_attack_type_label"
+			android:layout_height="wrap_content" android:layout_width="fill_parent"
+			android:id="@+id/crack_type" android:text="dictionary" />
+		<Button android:layout_alignParentRight="true" android:id="@+id/show_crack_types"
+			android:layout_centerVertical="true" android:background="@android:drawable/ic_menu_more"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	</RelativeLayout>
+
+	<LinearLayout android:orientation="vertical"
+		android:id="@+id/crack_incremental_holder" android:visibility="gone"
+		android:background="@drawable/semi_transparent_background"
+		android:gravity="left" android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:layout_marginTop="2dp"
+		android:padding="10px">
+		<TextView android:layout_width="fill_parent"
+			android:visibility="gone" android:gravity="left"
+			android:layout_height="wrap_content" android:text="Username" />
+		<EditText android:id="@+id/crack_incremental_username"
+			android:layout_width="fill_parent" android:visibility="gone"
+			android:maxLines="1" android:layout_height="wrap_content"
+			android:text="Admin" />
+		<TextView android:layout_width="fill_parent" android:padding="4dp"
+
+			android:gravity="left" android:layout_height="wrap_content"
+			android:text="Password min:max:charset" />
+		<EditText android:id="@+id/crack_incremental_options"
+			android:layout_width="fill_parent" android:maxLines="1"
+			android:layout_height="wrap_content" android:text="6:10:aA1/%-,." />
+	</LinearLayout>
+
+	<RelativeLayout android:background="@drawable/semi_transparent_background"
+		android:gravity="left" android:orientation="horizontal"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:layout_marginTop="2dp" android:padding="10px"
+		android:id="@+id/mitm_attack_type_holder">
+		<TextView android:gravity="left" android:paddingTop="4dp"
+			android:layout_height="wrap_content" android:layout_width="fill_parent"
+			android:id="@+id/mitm_attack_type_label" style="@style/BigHeader"
+			android:textColor="#63a6d9" android:text="Automatic Mode" />
+		<TextView android:gravity="left|bottom" android:textColor="#FFFFFFFF"
+			android:textSize="12dp" android:layout_below="@+id/mitm_attack_type_label"
+			android:layout_height="wrap_content" android:layout_width="fill_parent"
+			android:text="Match found protocols on Target" />
+		<RelativeLayout android:layout_alignParentRight="true"
+			android:background="@drawable/rounded_gradient_item_black"
+			android:layout_centerVertical="true" android:padding="1dp"
+			android:layout_marginRight="4dp" android:layout_marginTop="12dp"
+			android:layout_marginBottom="12dp" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<CheckBox android:background="@drawable/power_off"
+				android:checked="false" android:clickable="true"
+				android:button="@drawable/on_off_checkbox" android:id="@+id/crack_all_protocols"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		</RelativeLayout>
+	</RelativeLayout>
+
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_marginTop="2dp" android:layout_height="fill_parent">
+		<LinearLayout android:id="@+id/show_protocols"
+			android:visibility="gone" android:gravity="left" android:orientation="vertical"
+			android:layout_height="wrap_content" android:layout_width="fill_parent">
+			<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:background="#FF222222">
+				<TextView android:layout_width="wrap_content"
+					android:padding="9dp" android:paddingBottom="8dp"
+					android:paddingLeft="8dp" android:id="@+id/header"
+					android:layout_height="wrap_content" android:gravity="center_vertical"
+					android:textSize="12dp" android:textColor="#FFFFFF" android:text="Select protocol" />
+				<RelativeLayout android:layout_below="@+id/header"
+					android:layout_width="fill_parent" android:layout_height="2dp"
+					android:background="#FFFF0000" />
+			</RelativeLayout>
+			<ListView android:cacheColorHint="#00000000"
+				android:dividerHeight="2dp" android:divider="@android:color/transparent"
+				android:layout_width="fill_parent" android:layout_below="@+id/show_ports"
+				android:layout_height="fill_parent" android:id="@+id/main_menu" />
+		</LinearLayout>
+		<RelativeLayout android:layout_alignParentBottom="true"
+			android:layout_width="fill_parent" android:layout_height="50dp">
+			<Button android:id="@+id/gobutton" android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:text="Go" style="@style/BigHeader"
+				android:background="#FF336699" />
+		</RelativeLayout>
+	</RelativeLayout>
+
+</LinearLayout>

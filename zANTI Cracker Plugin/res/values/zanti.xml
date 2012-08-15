@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="zanti_plugin_id">zAntiCracker</string>
+    <string name="zanti_plugin_title">zANTI Cracker</string>
+    <string name="zanti_plugin_description">zANTI Cracker</string>
+    <string name="zanti_plugin_type">PLUGIN_CIRCLE</string>
+    <string name="zanti_plugin_activity_to_run">com.zimperium.zanti.cracker.CrackerOptions</string>
+
+    <bool name="zanti_plugin_requires_root">false</bool>
+
+</resources>

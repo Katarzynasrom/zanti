@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:id="@+id/rlt_main"
+	android:padding="6dp">
+	<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Example:" android:textSize="12dp"  />
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="-s 80 http-post-form &quot;/administrator/index.php:usrname=^USER^&amp;pass=^PASS^&amp;&#10;submit=Login:Incorrect Username&quot;"
+		android:padding="8dp" />
+	<EditText android:layout_width="fill_parent" android:id="@+id/cracker_cmdline"
+		android:layout_height="wrap_content" />
+</LinearLayout>

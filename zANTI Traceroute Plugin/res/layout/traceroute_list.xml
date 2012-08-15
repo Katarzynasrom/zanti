@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:orientation="vertical" android:id="@+id/top">
+
+		<com.google.android.maps.MapView
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:apiKey="0YeGu40qsXPlgdh1OrQRT5Xv-CmuSVvj5eSIcAQ" android:id="@+id/mapview"
+			android:layout_alignParentBottom="true" android:enabled="true"
+			android:clickable="true" android:paddingBottom="51px" />
+
+	</RelativeLayout>
+
+
+	<LinearLayout android:id="@+id/mapnavigator"
+		android:orientation="horizontal" android:layout_width="180dp"
+		android:layout_height="75dp" android:layout_alignParentBottom="true"
+		android:background="@drawable/black_arrow"
+		android:layout_marginBottom="51px">
+
+
+
+		<ImageButton android:layout_width="wrap_content"
+			android:paddingLeft="10dp" android:paddingTop="5px" android:gravity="center_vertical"
+			android:layout_height="wrap_content" android:background="@android:color/transparent"
+			android:src="@drawable/walk" android:id="@+id/traceroutebutton" />
+		<ImageButton android:layout_width="wrap_content"
+			android:paddingLeft="8dp" android:gravity="center_vertical"
+			android:background="@android:color/transparent"
+			android:layout_height="wrap_content" android:src="@drawable/go_left"
+			android:id="@+id/prevbutton" />
+		<ImageButton android:layout_width="wrap_content"
+			android:paddingLeft="0dp" android:gravity="center_vertical"
+			android:layout_height="wrap_content" android:background="@android:color/transparent"
+			android:src="@drawable/go_right" android:id="@+id/nextbutton" />
+
+
+
+
+	</LinearLayout>
+
+	<RelativeLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_centerInParent="true"
+		android:background="@drawable/black_arrow" android:id="@+id/walkthroughtooltip"
+		android:visibility="gone">
+		<TextView android:id="@+id/walkthroughhost"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="Test test test" style="@style/Header"
+			android:layout_centerHorizontal="true"></TextView>
+		<TextView android:id="@+id/walkthroughcity"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="Test test test" android:layout_below="@id/walkthroughhost"
+			android:layout_centerHorizontal="true"></TextView>
+		<LinearLayout android:layout_width="wrap_content"
+			android:visibility="gone" android:layout_height="wrap_content"
+			android:orientation="horizontal" android:layout_centerHorizontal="true"
+			android:layout_below="@id/walkthroughcity">
+			<Button android:id="@+id/prevbutton1" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Prev"></Button>
+			<Button android:id="@+id/nextbutton1" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="Next"></Button>
+		</LinearLayout>
+	</RelativeLayout>
+
+	<RelativeLayout android:layout_width="350dp"
+		android:layout_height="300dp" android:visibility="gone"
+		android:background="@drawable/black_arrow" android:id="@+id/floating">
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentTop="true"
+			android:layout_centerInParent="true" style="@style/Header"
+			android:background="@drawable/bottom_bar" android:gravity="center"
+			android:text="Node Details" android:id="@+id/headerfloating"
+			android:padding="10dp"></TextView>
+		<ListView android:id="@+id/listviewfloating"
+			android:background="@drawable/bg4" android:dividerHeight="10px"
+			android:divider="@android:color/transparent" android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:layout_below="@id/headerfloating"
+			android:cacheColorHint="@android:color/transparent"></ListView>
+	</RelativeLayout>
+
+	<RelativeLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+		<SlidingDrawer android:id="@+id/drawer" android:handle="@+id/handle"
+			android:content="@+id/content" android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<LinearLayout android:layout_height="fill_parent"
+				android:id="@id/handle" android:gravity="bottom" android:background="@drawable/bottom_bar"
+				android:layout_width="fill_parent" android:paddingTop="12dp"
+				android:paddingLeft="12dp" android:paddingRight="12dp">
+				<RelativeLayout android:id="@+id/scaninprogress"
+					android:layout_height="fill_parent" android:layout_width="fill_parent"
+					android:visibility="gone">
+					<ProgressBar android:layout_height="30dp"
+						android:layout_width="30dp" android:indeterminate="true"
+						android:id="@+id/loadingspinner" android:layout_centerVertical="true"
+						android:layout_alignParentRight="true" android:layout_marginRight="15dp"></ProgressBar>
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:id="@+id/loadingtext"
+						android:text="" android:layout_alignParentLeft="true"
+						android:layout_toLeftOf="@id/loadingspinner"></TextView>
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:id="@+id/loadingtextsub"
+						android:text="" android:layout_alignParentLeft="true"
+						android:layout_toLeftOf="@id/loadingspinner" android:layout_below="@id/loadingtext"
+						style="@style/SmallText"></TextView>
+				</RelativeLayout>
+
+				<RelativeLayout android:id="@+id/noscaninprogress"
+					android:layout_height="fill_parent" android:layout_width="fill_parent">
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:id="@+id/noscantext"
+						android:layout_centerVertical="true"
+						android:layout_centerInParent="true" android:text="No trace in progress."></TextView>
+				</RelativeLayout>
+
+				<RelativeLayout android:id="@+id/scancomplete"
+					android:layout_height="fill_parent" android:layout_width="fill_parent"
+					android:visibility="gone">
+					<TextView android:layout_width="fill_parent"
+						android:layout_height="wrap_content" android:id="@+id/scancompletetext"
+						android:text="" style="@style/Header"></TextView>
+				</RelativeLayout>
+
+			</LinearLayout>
+
+
+			<RelativeLayout android:id="@id/content"
+				android:layout_marginTop="10px" android:background="@drawable/bg4"
+				android:layout_width="fill_parent" android:layout_height="fill_parent">
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_alignParentTop="true"
+					android:layout_centerInParent="true" style="@style/Header"
+					android:text="Node Details" android:id="@+id/header"
+					android:padding="10dp"></TextView>
+				<!-- <TextView android:layout_width="wrap_content" -->
+				<!-- android:layout_height="wrap_content" -->
+				<!-- android:layout_alignParentLeft="true" android:layout_below="@id/header" -->
+				<!-- android:text="No past traces available." android:id="@+id/nopastscans"></TextView> -->
+				<ListView android:id="@+id/listview" android:layout_width="fill_parent"
+					android:dividerHeight="10px" android:divider="@android:color/transparent"
+					android:layout_height="fill_parent" android:layout_below="@id/header"
+					android:cacheColorHint="@android:color/transparent"></ListView>
+
+			</RelativeLayout>
+		</SlidingDrawer>
+
+	</RelativeLayout>
+</RelativeLayout>
