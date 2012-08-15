@@ -21,15 +21,10 @@
 
     <application
         android:icon="@drawable/icon"
-        android:label="zANTI Cracker Plugin"
+        android:label="zANTI Traceroute Plugin"
         android:theme="@android:style/Theme.NoTitleBar" >
         <activity
-            android:name=".Cracker"
-            android:exported="true"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".CrackerOptions"
+            android:name=".Traceroute"
             android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
