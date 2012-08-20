@@ -1,0 +1,70 @@
+<h2>zANTI Plugin Tutorial</h2>
+
+<h3>Required</h3>
+
+<p>In order to turn your Android app into a zANTI Plugin, you need the following support library:</p>
+
+<p><a href="zanti plugin library.jar">zanti plugin library.jar</a></p>
+
+<h3>Set up</h3>
+
+<p>In either a new android app, or an existing one, place the jar file into the libs/ folder, creating the folder if necessary.</p>
+
+<img src ="p1.png" />
+
+<p>In the properties for the app, add the zanti plugin library.jar to the build path (Add Jars...)</p>
+
+<img src="p2.png" />
+
+<p>In the AndroidManifest.xml file, add the following receiver to your application block:</p>
+
+<pre>
+        &lt;receiver android:name=&quot;com.zimperium.zanti.pluginlib.PluginAnnouncer&quot; &gt;<br/>            &lt;intent-filter&gt;<br/>                &lt;action android:name=&quot;com.zimperium.zanti.plugins.DETECT&quot; /&gt;<br/>            &lt;/intent-filter&gt;<br/>        &lt;/receiver&gt;
+</pre>
+
+<img src="p3.png" />
+
+<h3>Defining plugin settings</h3>
+
+<p>Add the following zanti.xml file to your /res/values/ folder:</p>
+
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br/>&lt;resources&gt;<br/><br/>    &lt;string name=&quot;zanti_plugin_id&quot;&gt;Unique ID here.&lt;/string&gt;<br/>    &lt;string name=&quot;zanti_plugin_title&quot;&gt;Place a title here.&lt;/string&gt;<br/>    &lt;string name=&quot;zanti_plugin_description&quot;&gt;Place a description here.&lt;/string&gt;<br/>    &lt;string name=&quot;zanti_plugin_type&quot;&gt;PLUGIN_CIRCLE&lt;/string&gt;<br/>    &lt;string name=&quot;zanti_plugin_activity_to_run&quot;&gt;com.example.DemoActivity&lt;/string&gt;<br/><br/>    &lt;bool name=&quot;zanti_plugin_requires_root&quot;&gt;false&lt;/bool&gt;<br/><br/>&lt;/resources&gt;
+</pre>
+
+<ul>
+<li>zanti_plugin_title must match with the title you upload to the zMarket with.</li>
+<li>zanti_plugin_type can be either PLUGIN_CIRCLE or PLUGIN_TASK - circle appears when selecting a target, and task appears in the sidebar inside zanti</li>
+<li>zanti_plugin_activity_to_run is the absolute path to the activity that you want zANTI to run for you. For example, com.example.myactivity - More in next section</li>
+</ul>
+
+<h3>Creating an activity for zAnti to call</h3>
+
+<p>In order for your plugin to inter-operate with zAnti, you must create an activity which will serve as an entry point.</p>
+<p>This is a regular Android Activity, such as the one below:</p>
+
+<img src="p5.png" />
+
+<p>When you define your activity in the manifest, you must have android:exported="true" set, as below:</p>
+
+<img src="p3.png" />
+
+<h3>Using zAnti data in your app</h3>
+
+<p>zAnti will pass data about the current target and running enviroment to your activity.</p>
+
+
+
+<h3>Uploading to zMarket</h3>
+
+<p>zMarket is a method for you to distribute your plugins to users.</p>
+<p>Once you have build your plugin and created an apk file, you can upload it.</p>
+<p>Navigate to <a href="http://remote.anti.zimperium.com/zmarket">http://remote.anti.zimperium.com/zmarket</a> and login using your zAnti username and password.</p>
+<p>Press the 'Upload Plugin' button as shown below:</p>
+
+<img src="p4.png" />
+
+<p>You must fill out all fields. The plugin name must match zanti_plugin_title from your plugin.</p>
+
+<p>Once you complete the form, you can submit it and your application will automatically be available to users.</p>
+
